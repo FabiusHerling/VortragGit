@@ -1,3 +1,5 @@
+import java.util.*;
+
 final class Student extends Person{
     
     enum fakultaet{
@@ -15,12 +17,14 @@ final class Student extends Person{
     private int matrikelnummer;
     private String studiengang;
     private fakultaet fakultaet;
+    private List<Grade> noten;
 
     public Student(String namen, int matrikelnummer, String studiengang, fakultaet fakultaet){
         super(namen, namen + matrikelnummer + "@rwth.de");
         this.matrikelnummer = matrikelnummer;
         this.fakultaet = fakultaet;
         this.studiengang = studiengang;
+        this.noten = new ArrayList<>();
     }
 
     public int getMatrikelnummer(){
@@ -45,5 +49,17 @@ final class Student extends Person{
 
     public void setFakultaet(fakultaet fakultaet){
         this.fakultaet = fakultaet;
+    }
+
+    public void addNote(Grade note) {
+        noten.add(note);
+    }
+
+    public void removeNote(Grade note) {
+        noten.remove(note);
+    }
+
+    public List<Grade> getNoten() {
+        return Collections.unmodifiableList(noten);
     }
 }
