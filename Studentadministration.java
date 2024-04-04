@@ -4,10 +4,12 @@ public class Studentadministration{
 
     private List<Student> studenten;
     private List<Employee> mitarbeiter;
+    private List<Course> kurse;
 
     public Studentadministration(){
         this.studenten = new ArrayList<>();
         this.mitarbeiter = new ArrayList<>();
+        this.kurse = new ArrayList<>();
     }
 
     public void addStudent(Student student) {
