@@ -1,4 +1,4 @@
-abstract sealed class Person permits Student, Employee{
+abstract sealed class Person permits Student, Applicant, Employee{
     
     private String name;
     private String email;
